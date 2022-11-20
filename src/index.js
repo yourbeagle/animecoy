@@ -12,29 +12,28 @@ const $ = (e) => {
     return e.length > 1 ? e : e[0]
 }
 
-const newCardGroup = ({title, expand, data}) => {
+const newCardGroup = ({title, data}) => {
     const cardGroup = document.createElement('card-group')
     cardGroup.setAttribute('title', title)
-    cardGroup.setAttribute('expand', expand)
     cardGroup.bind = data
     return cardGroup
 }
 
 const search = $('form')
 const inputSearch = $('input')[0]
-const view = $('main')
+const main = $('main')
 
 
-search.onsubmit = (event) => {
-  event.preventDefault()
+search.onsubmit = (e) => {
+  e.preventDefault()
   if(inputSearch.value){
     view.innerHTML = ''
-    DataSource.search(inputSearch.value).then(res => {
+    DataSource.search(inputSearch.value).then(response => {
       const cardGroup = newCardGroup({
         title : `Hasil dari Pencarian ${inputSearch.value}`,
-        data: res.data.data
+        data: response.data.data
       })
-      view.appendChild(cardGroup)
+      main.appendChild(cardGroup)
     })
   }else {
     alert("Input Tidak boleh Kosong")
@@ -44,14 +43,14 @@ search.onsubmit = (event) => {
 
 axios.all([
     DataSource.anime,
-  ]).then((res) => {
+  ]).then((response) => {
     const groupTitles = ["Daftar Anime"]
-    groupTitles.forEach((title, index) => {
+    groupTitles.forEach((title,index) => {
       const cardGroup = newCardGroup({
-        title, 
-        data: res[index].data.data,
+        title : title,
+        data: response[index].data.data,
       })
     //   console.log(res[index].data.links.next)
-      view.appendChild(cardGroup)
+      main.appendChild(cardGroup)
     })
 })

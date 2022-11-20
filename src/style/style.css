@@ -7,6 +7,8 @@
 
 body{
   background-image: url("https://images8.alphacoders.com/632/632051.png");
+  background-position: center;
+  background-size: cover;
 }
 
 .overlay_card{
@@ -24,10 +26,13 @@ body{
   width: 100%;
 }
 
+.badge_items{
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
 .jumbotron{
-  background-position: center;
-  background-size: cover;
-  width: 1300px;
+  width: 100%;
   margin-top: 20px;
   height: 200px;
   z-index: -1 ;
@@ -48,14 +53,39 @@ body{
   width: 0px;
 }
 
-@media screen and (max-width: 600px){
-  .overlay_card {
-    display: none;
-  }
+@media screen and (max-width: 800px){
   .badge{
     display: none;
   }
-  p{
-    display: none;
+  #synopsis{
+    font-size: 10px;
+  }
+  
+  #container_synopsis{
+    margin-top: 70px !important;
+    height: 150px !important;
+  }
+}
+
+@media screen and (max-width: 968px){
+  #synopsis{
+    font-size: 12px;
+  }
+
+  .badge_items{
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+
+  #container_synopsis{
+    height: 170px !important;
+  }
+
+  .badge_items > span {
+    font-size: 10px;
+  }
+
+  .text_title{
+    font-size: 13px !important;
   }
 }

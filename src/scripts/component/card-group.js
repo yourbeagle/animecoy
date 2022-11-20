@@ -1,7 +1,5 @@
 import './card-item.js'
 
-
-
 class CardGroup extends HTMLElement {
 
     connectedCallback(){
@@ -19,14 +17,14 @@ class CardGroup extends HTMLElement {
     render(){
         this.innerHTML = `
         <h3 class="mb-3 text-white">${this.title}</h3>
-        <div class="row ${this.expand === 'vertical' ? 'gx-3 flex-nowrap overflow-auto' : 'g-2'} mb-4"></div>
+        <div class="row g-2 mb-4"></div>
         `
 
-        this.renderCards(this.animes);
+        this.makeCards(this.animes);
 
     }
 
-    renderCards(animes) {
+    makeCards(animes) {
         const cardGroup = this.querySelector('.row')
         animes.forEach((animes, index) => {
           const cardItem = document.createElement('card-item')

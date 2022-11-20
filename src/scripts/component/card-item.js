@@ -15,14 +15,14 @@ class CardItem extends HTMLElement {
           <img id="${this.id}" src="${this.anime.posterImage.large}" width="100%" alt="${this.anime.titles.en_jp}" />
           <div class="position-absolute bottom-0 w-100 p-3 overlay_card">
             <h5 class="text-light overflow-hidden mb-0 text_title">${this.anime.titles.en_jp}</h5>
-                <div style="margin-top:70px">
+                <div class="badge_items">
                     <span class="badge bg-white text-dark">${this.anime.subtype}</span>
                     <span class="badge bg-white text-dark">${this.anime.status}</span>
                     <span class="badge bg-white text-dark">${this.anime.averageRating}</span>
                     <span class="badge bg-white text-dark">${this.anime.ageRatingGuide}</span>
                 </div>
-                <div class="position-relative bottom-0 overflow-auto mt-5 mb-2" style="height:250px">
-                    <p class="text-light">${this.anime.synopsis}</p>
+                <div id="container_synopsis" class="position-relataive bottom-0 overflow-auto" style="height:250px">
+                    <p class="text-light" id="synopsis">${this.anime.synopsis}</p>
                 </div>
           </div>
         </div>
