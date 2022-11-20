@@ -1,0 +1,61 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Sono', sans-serif !important;
+}
+
+body{
+  background-image: url("https://images8.alphacoders.com/632/632051.png");
+}
+
+.overlay_card{
+  position: absolute;
+  bottom: 0 !important;
+  right: 0 !important;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.container-fluid{
+  width: 100%;
+}
+
+.jumbotron{
+  background-position: center;
+  background-size: cover;
+  width: 1300px;
+  margin-top: 20px;
+  height: 200px;
+  z-index: -1 ;
+  position: relative;
+}
+
+.text_title{
+  color: white;
+  font-size: 20px;
+  position: absolute;
+}
+
+.card:hover .overlay_card{
+  opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+@media screen and (max-width: 600px){
+  .overlay_card {
+    display: none;
+  }
+  .badge{
+    display: none;
+  }
+  p{
+    display: none;
+  }
+}
