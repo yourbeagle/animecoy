@@ -27,7 +27,7 @@ const main = $('main')
 search.onsubmit = (e) => {
   e.preventDefault()
   if(inputSearch.value){
-    view.innerHTML = ''
+    main.innerHTML = ''
     DataSource.search(inputSearch.value).then(response => {
       const cardGroup = newCardGroup({
         title : `Hasil dari Pencarian ${inputSearch.value}`,

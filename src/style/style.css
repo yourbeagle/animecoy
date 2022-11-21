@@ -8,6 +8,7 @@
 body{
   background-image: url("https://images8.alphacoders.com/632/632051.png");
   background-position: center;
+  display: block;
   background-size: cover;
 }
 
